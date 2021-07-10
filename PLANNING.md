@@ -8,9 +8,10 @@
 
 ### Work Timer (Default View)
 1. As a user I want to see the Work timer showing the starting time (25 minutes) when I open the app
+    - Create a containing element with an appropriate id
     - Display a title for the Work timer
     - Display a static timer in the form 00:00
-        - Create an element for the Work timer
+        - Create an element for the Work time
         - Hard code minute & second values into the element
 
 2. As a user I want to see an option to START the Work timer
@@ -39,10 +40,11 @@
 
 ### Switch Timer View
 1. As a user I want to see an option to SWITCH betweem the Work and Rest timers
+    - Display an element to be used to SWITCH between the Work and Rest timers
 
-3. As a user I want to see the Work timer when I use choose that option
+2. As a user I want to see the Work timer when I use choose that option
 
-4. As a user I want to see the Rest timer when I use choose that option
+3. As a user I want to see the Rest timer when I use choose that option
 
 
 ### Rest Timer
@@ -63,6 +65,13 @@
 
 
 ## Google Searches & Resources Found
+`mdn HTML elements`:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+`javascript time since`:
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime
+
 
 ## Things I didn't plan for or know about 
 
