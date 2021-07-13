@@ -34,4 +34,9 @@ function pauseTimer(event) {
 }
 
 function resetTimer(event) {
+    clearInterval(workIntervalID);
+    event.target.previousElementSibling.previousElementSibling.disabled = false;
+    minutesElem.innerText = 25;
+    secondsElem.innerText = `00`;
+    workTimeInSeconds = 25 * 60;
 }

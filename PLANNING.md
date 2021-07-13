@@ -43,7 +43,11 @@
     - Create an HTML button for RESET
 
 7. As a user I want to see the Work time return to its full value when I click the RESET option
-
+    - Create a reference to the RESET button
+    - Add a `click` event listener to it
+    - Reset `workTimeInSeconds` to 1,500 seconds
+    - Reset the display to 25:00
+    
 8. As a user I want to hear a sound when the Work timer runs out (hits 00:00)
 
 
