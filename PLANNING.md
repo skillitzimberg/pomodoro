@@ -40,6 +40,7 @@
     - Call `clearInterval` with the `intervalID`
 
 6. As a user I want to see an option to RESET the Work timer
+    - Create an HTML button for RESET
 
 7. As a user I want to see the Work time return to its full value when I click the RESET option
 
@@ -94,5 +95,7 @@
 NOTE: I feel like I failed at dealing with time. I stumbled on a solution, but I was never able to reason my way to a solution. Doesn't feel good . . .
 
 - I need to keep the Work timer state for when the PAUSE button is used. I need to be able to start back up from that point.
+
+- I didn't plan for good code reuse. I think that I can probably figure out a way to reuse ideas like starting, pausing, and resetting a timer for both the Work and Rest timers. When should I do that? After brute forcing the whole project?
 
 ## Potential problems

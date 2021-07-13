@@ -2,8 +2,10 @@ const minutesElem = document.getElementById("minutes");
 const secondsElem = document.getElementById("seconds");
 const startWorkTimer = document.getElementById("start-work-timer");
 const pauseWorkTimer = document.getElementById("pause-work-timer");
+const resetWorkTimer = document.getElementById("reset-work-timer");
 startWorkTimer.addEventListener("click", runWorkTimer);
 pauseWorkTimer.addEventListener("click", pauseTimer);
+resetWorkTimer.addEventListener("click", resetTimer);
 
 let workIntervalID;
 
@@ -29,4 +31,7 @@ function pauseTimer(event) {
     console.log(event.target.previousElementSibling);
     event.target.previousElementSibling.disabled = false;
     clearInterval(workIntervalID);
+}
+
+function resetTimer(event) {
 }
