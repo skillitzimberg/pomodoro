@@ -59,10 +59,15 @@
 1. As a user I want to see an option to SWITCH betweem the Work and Rest timers
     - Display an element to be used to SWITCH between the Work and Rest timers
 
-2. As a user I want to see the Work timer when I use choose that option
-
-3. As a user I want to see the Rest timer when I use choose that option
-
+2. As a user I want to be able to SWITCH between the Rest and Work timers
+    - Create a reference to the SWITCH
+    - Add an event handler to SWITCH
+    - Create the event handler for SWITCH
+    - Create CSS class to hide elements
+    - Create an element for the Rest timer
+    - Give the Rest timer element the hide class
+    - Toggle the hide class for both the Work & Rest timers when the SWITCH is used
+    - Change the SWITCH text appropriately
 
 ### Rest Timer
 1. As a user I want to see an option to START the Rest timer
@@ -89,6 +94,9 @@
 
 `js get difference between times in minutes seconds`:
 - https://stackoverflow.com/questions/13903897/javascript-return-number-of-days-hours-minutes-seconds-between-two-dates
+
+`javascript play sound`
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio
 
 ## Things I didn't plan for or know about 
 - If I use `setInterval` for when the START button is used, I think I'll need to disable the button until after the time is up so that the user can't start multiple timers running.
