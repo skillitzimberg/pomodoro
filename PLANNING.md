@@ -31,6 +31,7 @@
         - Disable the START button so that the user cannot start more than one timer at a time
 
 4. As a user I want to see an option to PAUSE the Work timer
+    - Create HTML button for PAUSE
 
 5. As a user I want to see the Work time pause when I click the PAUSE option
 

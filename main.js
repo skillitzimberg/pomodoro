@@ -7,9 +7,7 @@ minutesElem.innerText = 25;
 secondsElem.innerText = `00`;
 
 function runWorkTimer(event) {    
-    console.log(event.target);
     event.target.disabled = true;
-    console.log(event.target);
     let timeInSeconds = 25 * 60; // 1500 seconds
     
     const intervalID = setInterval(function() {
