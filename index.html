@@ -3,12 +3,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Pomodoro Timer</title>
 </head>
 <body>
     <main>
         <h1>Pomorodo Timer</h1>
         <h2>A timer to manage your work & rest sessions</h2>
+        <button id="switch-timers"><span class="">Switch to Rest Timer</span><span class="hidden">Switch to Rest Timer</span></button>
+
+        <section id="work" class="">
+            <h3>Work</h3>
+            <div>
+                <span id="minutes"></span>:<span id="seconds"></span>
+            </div>
+            <button id="start-work-timer">Start</button>
+            <button id="pause-work-timer">Pause</button>
+            <button id="reset-work-timer">Reset</button>
+        </section>
+
+        <section id="rest" class="hidden">
+            <h3>Rest</h3>
+            <div>
+                <span id="minutes"></span>:<span id="seconds"></span>
+            </div>
+            <button id="start-work-timer">Start</button>
+            <button id="pause-work-timer">Pause</button>
+            <button id="reset-work-timer">Reset</button>
+        </section>
     </main>
 </body>
 </html>
