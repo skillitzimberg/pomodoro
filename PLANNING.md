@@ -34,6 +34,10 @@
     - Create HTML button for PAUSE
 
 5. As a user I want to see the Work time pause when I click the PAUSE option
+    - Move `workTimeInSeconds` into the global space so PAUSE can use its last state
+    - Create a reference to the PAUSE button
+    - Add a `click` event listener to it
+    - Call `clearInterval` with the `intervalID`
 
 6. As a user I want to see an option to RESET the Work timer
 
@@ -87,6 +91,8 @@
     - 1499 seconds (25 minutes converted to seconds minus 1 second)
     - 24 minutes (absolute value of 1499 seconds / 60)
     - 59 seconds (1499 seconds minus 24 minutes * 60 seconds)
+NOTE: I feel like I failed at dealing with time. I stumbled on a solution, but I was never able to reason my way to a solution. Doesn't feel good . . .
 
+- I need to keep the Work timer state for when the PAUSE button is used. I need to be able to start back up from that point.
 
 ## Potential problems
