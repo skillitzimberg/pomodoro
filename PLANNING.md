@@ -47,8 +47,12 @@
     - Add a `click` event listener to it
     - Reset `workTimeInSeconds` to 1,500 seconds
     - Reset the display to 25:00
-    
+
 8. As a user I want to hear a sound when the Work timer runs out (hits 00:00)
+    - Record a sound
+    - Import it into the project
+    - Use `Audio()` construction to get an instance
+    - Play the instance when `workTimeInSeconds` goes to 0
 
 
 ### Switch Timer View
