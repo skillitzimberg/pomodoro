@@ -99,4 +99,4 @@ function addLeadingZeros(number) {
     return number < 10 ? `0${number}` : number
 }
 
-const timer = init(0.5, 5);
+const timer = init(25, 5);
