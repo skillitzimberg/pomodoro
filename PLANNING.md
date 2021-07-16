@@ -84,6 +84,9 @@
 
 7. As a user I want to hear a sound when the Rest timer runs out (hits 00:00)
 
+## Styling
+1. As a user I want the app to look good on mobile
+
 ## Google Searches & Resources Found
 `mdn HTML elements`:
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Element
@@ -113,5 +116,7 @@ NOTE: I feel like I failed at dealing with time. I stumbled on a solution, but I
 - I need to keep the Work timer state for when the PAUSE button is used. I need to be able to start back up from that point.
 
 - I didn't plan for good code reuse. I think that I can probably figure out a way to reuse ideas like starting, pausing, and resetting a timer for both the Work and Rest timers. When should I do that? After brute forcing the whole project?
+
+- I tried to use a Timer class, but couldn't make it work. I essentially re-invented the wheel by using an `init();` fucntion to return an object with all the DOM elements and variables I needed. It also initializes the timer display.
 
 ## Potential problems

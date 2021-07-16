@@ -9,29 +9,22 @@
 </head>
 <body>
     <main>
-        <h1>Pomorodo Timer</h1>
-        <h2>A timer to manage your work & rest sessions</h2>
-        <button id="switch-timers"><span class="">Switch to Rest Timer</span><span class="hidden">Switch to Rest Timer</span></button>
-
-        <section id="work" class="">
-            <h3>Work</h3>
-            <div>
-                <span id="minutes"></span>:<span id="seconds"></span>
-            </div>
-            <button id="start-work-timer">Start</button>
-            <button id="pause-work-timer">Pause</button>
-            <button id="reset-work-timer">Reset</button>
+        <section>
+            <h1>Pomorodo Timer</h1>
+            <h2>Get your tomatoes together!</h2>
+        </section>
+        
+        <section id="timer" class="">
+            <h3 id="timer-type">Work</h3>
+            <h4 id="time-display"></h4>
+            <section id="controls">
+                <button id="start-timer">Start</button>
+                <button id="pause-timer">Pause</button>
+                <button id="reset-timer">Reset</button>
+            </section>
         </section>
 
-        <section id="rest" class="hidden">
-            <h3>Rest</h3>
-            <div>
-                <span id="minutes"></span>:<span id="seconds"></span>
-            </div>
-            <button id="start-work-timer">Start</button>
-            <button id="pause-work-timer">Pause</button>
-            <button id="reset-work-timer">Reset</button>
-        </section>
+        <button id="switch-timers">Switch to Rest timer</button>
     </main>
 </body>
 </html>
