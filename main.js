@@ -1,102 +1,84 @@
-function init(workDuration, restDuration) {  
-    const work = workDuration * 60;
-    const rest = restDuration * 60; 
-    const timerType = document.getElementById("timer-type");
-    const startButton = document.getElementById("start-timer");
-    const pauseButton = document.getElementById("pause-timer");
-    const resetButton = document.getElementById("reset-timer");
-    const switchButton = document.getElementById("switch-timers");
+(function () {
+  const work = 25 * 60;
+  const rest = 5 * 60;
 
-    let timeRemaining = work;
-    let isRestTimer = false;
-    let intervalId;
+  const startButton = document.getElementById("start-timer");
+  startButton.addEventListener("click", startTimer);
 
-    startButton.addEventListener("click", startTimer);
-    pauseButton.addEventListener("click", pauseTimer);
-    resetButton.addEventListener("click", resetTimer);
-    switchButton.addEventListener("click", switchTimers);
+  const pauseButton = document.getElementById("pause-timer");
+  pauseButton.addEventListener("click", pauseTimer);
+
+  const resetButton = document.getElementById("reset-timer");
+  resetButton.addEventListener("click", resetTimer);
+
+  const switchButton = document.getElementById("switch-timers");
+  switchButton.addEventListener("click", switchTimers);
+
+  const renderSwitchText = (text) =>
+    (switchButton.textContent = `Switch to ${text} timer`);
+
+  const renderTimerText = (text) =>
+    (document.getElementById("timer-type").textContent = text);
+
+  const addLeadingZeros = (number) => (number < 10 ? `0${number}` : number);
+
+  const playSound = (sound) => sound.play();
+
+  let timeRemaining = work;
+  let isRestTimer = false;
+  let intervalId;
+
+  function renderTime(time) {
+    const minutes = addLeadingZeros(Math.floor(time / 60));
+    const seconds = addLeadingZeros(time % 60);
+
+    document.getElementById(
+      "time-display"
+    ).textContent = `${minutes}:${seconds}`;
+  }
+
+  function startTimer() {
+    startButton.disabled = true;
+    switchButton.disabled = true;
+    intervalId = setInterval(function () {
+      timeRemaining--;
+      renderTime(timeRemaining);
+
+      if (timeRemaining <= 0) {
+        playSound(new Audio("bell.m4a"));
+        resetTimer();
+      }
+    }, 1000);
+  }
+
+  function pauseTimer() {
+    startButton.disabled = false;
+    switchButton.disabled = false;
+    clearInterval(intervalId);
+  }
+
+  function resetTimer() {
+    startButton.disabled = false;
+    switchButton.disabled = false;
+    clearInterval(intervalId);
+
+    isRestTimer ? (timeRemaining = rest) : (timeRemaining = work);
 
     renderTime(timeRemaining);
+  }
 
-    return {
-        work,
-        rest,
-        timerType,
-        startButton,
-        pauseButton,
-        resetButton,
-        switchButton,
-        timeRemaining,
-        isRestTimer,
-        intervalId,
-    };
-}
+  function switchTimers() {
+    isRestTimer
+      ? (renderSwitchText("Rest"),
+        renderTimerText("Work"),
+        (timeRemaining = work))
+      : (renderSwitchText("Work"),
+        renderTimerText("Rest"),
+        (timeRemaining = rest));
 
-function renderTime(time) {
-    const display = document.getElementById("time-display");
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    display.textContent = `${addLeadingZeros(minutes)}:${addLeadingZeros(seconds)}`;
-}
+    isRestTimer = !isRestTimer;
+    renderTime(timeRemaining);
+  }
 
-function startTimer() {
-    timer.startButton.disabled = true;
-    timer.switchButton.disabled = true;
-    timer.intervalId = setInterval(function() {
-        timer.timeRemaining--;
-        renderTime(timer.timeRemaining);
-
-        if(timer.timeRemaining <= 0) {
-            const bell = new Audio("bell.m4a");
-            bell.play();
-            clearInterval(timer.intervalId);
-            resetTimer();
-        };
-
-    }, 1000);
-}
-
-function pauseTimer() {
-    timer.startButton.disabled = false;
-    timer.switchButton.disabled = false;
-    clearInterval(timer.intervalId);
-}
-
-function resetTimer() {
-    timer.startButton.disabled = false;
-    timer.switchButton.disabled = false;
-    clearInterval(timer.intervalId);
-
-    timer.isRestTimer ? 
-        timer.timeRemaining = timer.rest : 
-        timer.timeRemaining = timer.work;
-
-    renderTime(timer.timeRemaining);
-}
-
-function switchTimers() {
-    timer.isRestTimer ? 
-        (renderSwitchText("Rest"), 
-        renderTimerText("Work"), 
-        timer.timeRemaining = timer.work) : 
-        (renderSwitchText("Work"), 
-        renderTimerText("Rest"), 
-        timer.timeRemaining = timer.rest);
-
-    timer.isRestTimer = !timer.isRestTimer;
-    renderTime(timer.timeRemaining);
-}
-
-function renderSwitchText(text) {
-    timer.switchButton.textContent = `Switch to ${text} timer`;
-}
-
-function renderTimerText(text) {
-    timer.timerType.textContent = text;
-}
-
-function addLeadingZeros(number) {
-    return number < 10 ? `0${number}` : number
-}
-
-const timer = init(25, 5);
+  renderTime(timeRemaining);
+})();
